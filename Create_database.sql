@@ -25,7 +25,8 @@ CREATE TABLE TIENDA (
 CREATE TABLE COMPRAR (
     idCliente INT,
     idTienda INT,
-    PRIMARY KEY(idCliente, idTienda),
+    fecha DATE
+    PRIMARY KEY(idCliente, idTienda, fecha),
     FOREIGN KEY(idCliente) REFERENCES CLIENTE(idCliente),
     FOREIGN KEY(idTienda) REFERENCES TIENDA(idTienda)
 );
@@ -115,7 +116,6 @@ CREATE TABLE PROVEEDORES (
 
 ---------------------------------------------------------
 -- RELACIÓN PIEZAS – PROVEEDORES (SUMINISTRAR) → N:M
--- Incluye atributos: fechaSuministro, fechaRecepcion
 ---------------------------------------------------------
 CREATE TABLE SUMINISTRAR (
     idPieza INT,
